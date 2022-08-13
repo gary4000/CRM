@@ -1,0 +1,41 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = #22791#27880
+  ClientHeight = 479
+  ClientWidth = 656
+  Position = MainFormCenter
+  FormStyle = StayOnTop
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  DesignerMasterStyle = 0
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 625.000000000000000000
+    Size.Height = 417.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnApplyStyleLookup = Memo1ApplyStyleLookup
+    Viewport.Width = 625.000000000000000000
+    Viewport.Height = 417.000000000000000000
+  end
+  object Button1: TButton
+    Anchors = [akRight, akBottom]
+    Cancel = True
+    Position.X = 561.000000000000000000
+    Position.Y = 442.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = #20445#23384#24182#20851#38381
+    OnClick = Button1Click
+  end
+end
