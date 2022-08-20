@@ -173,14 +173,14 @@ object Form1: TForm1
           Width = 150
         end
         item
-          MemberName = #19978#27425#32852#31995#26102#38388
-          Header = #19978#27425#32852#31995#26102#38388
+          MemberName = #26368#21518#32852#31995#26085#26399
+          Header = #26368#21518#32852#31995#26085#26399
           Width = 100
           ColumnStyle = 'DateColumn'
         end
         item
-          MemberName = #19979#27425#32852#31995#26102#38388
-          Header = #19979#27425#32852#31995#26102#38388
+          MemberName = #19979#27425#32852#31995#26085#26399
+          Header = #19979#27425#32852#31995#26085#26399
           Width = 100
           ColumnStyle = 'DateColumn'
         end

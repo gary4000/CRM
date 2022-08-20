@@ -139,7 +139,7 @@ begin
   begin
     FDConnection1.Connected := True;
     FDConnection1.Params.Database := FileName;
-    SQL := 'CREATE TABLE CRM(ID INTEGER PRIMARY KEY NOT NULL,客户名称 TEXT(20), 上次联系时间 DATE, 下次联系时间 DATE, 备注 TEXT)';
+    SQL := 'CREATE TABLE CRM(ID INTEGER PRIMARY KEY NOT NULL,客户名称 TEXT(20), 最后联系日期 DATE, 下次联系日期 DATE, 备注 TEXT)';
     FDConnection1.ExecSQL(SQL);
 
 //    SQL := 'INSERT INTO CRM VALUES(''1'', ''公司名称'', ''2022-01-01'', '''', '''')';
@@ -149,7 +149,7 @@ begin
     FDConnection1.Connected := True;
   end;
 
-  SQL := 'select * from CRM where 下次联系时间=date(''now'',''0 day'')';
+  SQL := 'select * from CRM where 下次联系日期=date(''now'',''0 day'')';
 
   FDQuery1.Connection := FDConnection1;
   DataSource1.DataSet := FDQuery1;
@@ -199,7 +199,7 @@ begin
 //  Date := FormatDateTime('YYYY/MM/DD', Now);
 //  SQL := 'SELECT * FROM CRM WHERE ID IN (SELECT ID FROM CRM WHERE 下次联系时间 = 2022/8/7)';
 //SQL := 'select * from CRM where 下次联系时间=date(''now'',''start of day'')';
-  SQL := 'select * from CRM where 下次联系时间=date(''now'',''0 day'')';
+  SQL := 'select * from CRM where 下次联系日期=date(''now'',''0 day'')';
   FDQuery1.Open(SQL);
 //  FDQuery1.Open('select * from CRM where 下次联系时间>=date(''now'', ''2022/8/7'')');
   Label1.Text := '客户数量:' + IntToStr(StringGrid1.RowCount);
@@ -211,7 +211,7 @@ var
 begin
 //  SQL := 'select * from CRM where 下次联系时间>=date(''now'',''3 day'')';
 //  SQL := 'select * from CRM where DATE(下次联系时间) BETWEEN date(''now'',''start day'') AND date(''now'',''3 day'')';
-  SQL := 'select * from crm where 下次联系时间>=date(''now'',''0 day'') and 下次联系时间<=date(''now'',''2 day'')';
+  SQL := 'select * from crm where 下次联系日期>=date(''now'',''0 day'') and 下次联系日期<=date(''now'',''2 day'')';
   FDQuery1.Open(SQL);
   Label1.Text := '客户数量:' + IntToStr(StringGrid1.RowCount);
 end;
@@ -220,7 +220,7 @@ procedure TForm1.TreeViewItem3Click(Sender: TObject);
 var
   SQL: string;
 begin
-  SQL := 'select * from crm where 上次联系时间<>''''';
+  SQL := 'select * from crm where 最后联系日期<>''''';
   FDQuery1.Open(SQL);
   Label1.Text := '客户数量:' + IntToStr(StringGrid1.RowCount);
 end;
@@ -229,7 +229,7 @@ procedure TForm1.TreeViewItem4Click(Sender: TObject);
 var
   SQL: string;
 begin
-  SQL := 'select * from CRM where 上次联系时间=date(''now'',''0 day'')';
+  SQL := 'select * from CRM where 最后联系日期=date(''now'',''0 day'')';
   FDQuery1.Open(SQL);
   Label1.Text := '客户数量:' + IntToStr(StringGrid1.RowCount);
 end;
@@ -241,7 +241,7 @@ begin
 //is null 表示建表时都是空值，NULL表示no known，即不知道，所以，它可以是任意值。
 //所以使用 =null是查不到值的，因为=不知道，还是不知道。
 //is null 和 = null的主要区别在于满不满足ANSISQL（SQL-92）规定
-  SQL := 'select * from crm where 上次联系时间 is null';
+  SQL := 'select * from crm where 最后联系日期 is null';
   FDQuery1.Open(SQL);
   Label1.Text := '客户数量:' + IntToStr(StringGrid1.RowCount);
 end;

@@ -23,8 +23,8 @@ object Form2: TForm2
     Size.PlatformDefault = False
     TabOrder = 0
     OnApplyStyleLookup = Memo1ApplyStyleLookup
-    Viewport.Width = 625.000000000000000000
-    Viewport.Height = 417.000000000000000000
+    Viewport.Width = 621.000000000000000000
+    Viewport.Height = 413.000000000000000000
   end
   object Button1: TButton
     Anchors = [akRight, akBottom]
